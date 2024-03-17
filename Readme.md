@@ -76,11 +76,13 @@ rm -r data2/*
 ```bash
 docker-compose stop patroni3
 rm -r data3/*
+tar xzf prod/base.tar.gz -C data3
+tar xzf prod/pg_wal.tar.gs  -C data3/pg_wal
 ```
 
 Запускаем patroni на лидере
 ```bash
-docker-compose up -d s=patroni3
+docker-compose up -d patroni3
 ```
 И ..... ошибка:
 
